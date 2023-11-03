@@ -12,10 +12,10 @@ jobs:
     steps:
       - name: access to secrets
         run: |
-          echo OPENAI_API_KEY=${{ secrets.OPENAI_API_KEY }} >> .env
-          echo HUGGINGFACEHUB_API_TOKEN=${{ secrets.HUGGINGFACEHUB_API_TOKEN }} >> .env
-          echo msy_naver_papago_api_id=${{ secrets.msy_naver_papago_api_id }} >> .env
-          echo msy_naver_papago_api_secret=${{ secrets.msy_naver_papago_api_secret }} >> .env
+          echo $OPENAI_API_KEY >> OPENAI_API_KEY.json
+          echo $HUGGINGFACEHUB_API_TOKEN >> HUGGINGFACEHUB_API_TOKEN.json
+          echo $msy_naver_papago_api_id >> msy_naver_papago_api_id.json
+          echo $msy_naver_papago_api_secret >> msy_naver_papago_api_secret.json
         env:
           OPENAI_API_KEY: ${{secrets.OPENAI_API_KEY}}
           HUGGINGFACEHUB_API_TOKEN: ${{secrets.HUGGINGFACEHUB_API_TOKEN}}
